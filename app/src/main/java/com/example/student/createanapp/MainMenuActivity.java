@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainMenuActivity extends AppCompatActivity {
 
-    Button btnPlay;
+   private Button btnPlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

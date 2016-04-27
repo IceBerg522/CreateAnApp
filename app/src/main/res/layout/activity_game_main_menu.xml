@@ -1,69 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.student.createanapp.GameMainMenuActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Let&apos;s Play!"
-        android:id="@+id/txtvwStatus"
-        android:textSize="25dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rock"
+        android:text="@string/btnRock"
         android:id="@+id/btnRock"
-        android:onClick="playRock"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="playRock" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/btnPaper"
         android:id="@+id/btnPaper"
-        android:text="Paper"
         android:onClick="playPaper"
-        android:layout_alignTop="@+id/btnRock"
-        android:layout_alignRight="@+id/txtvwStatus"
-        android:layout_alignEnd="@+id/txtvwStatus" />
+        android:layout_above="@+id/btnLizard"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scissors"
+        android:text="@string/btnScissors"
         android:id="@+id/btnScissors"
         android:onClick="playScissors"
-        android:layout_alignTop="@+id/btnPaper"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/btnQuit"
+        android:layout_alignEnd="@+id/btnQuit" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lizard"
+        android:text="@string/btnLizard"
         android:id="@+id/btnLizard"
-        android:onClick="playLizard"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="54dp"
         android:layout_below="@+id/btnRock"
         android:layout_toLeftOf="@+id/btnPaper"
-        android:layout_toStartOf="@+id/btnPaper" />
+        android:layout_toStartOf="@+id/btnPaper"
+        android:onClick="playLizard" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Spock"
+        android:text="@string/btnSpock"
         android:id="@+id/btnSpock"
         android:onClick="playSpock"
         android:layout_alignTop="@+id/btnLizard"
@@ -73,10 +62,20 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quit"
+        android:text="@string/btnQuit"
         android:id="@+id/btnQuit"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/btnScissors"
-        android:layout_alignEnd="@+id/btnScissors"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:onClick="quitGame" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let&apos;s Play!"
+        android:id="@+id/txtvwStatus"
+        android:textSize="25sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp" />
 </RelativeLayout>

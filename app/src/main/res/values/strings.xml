@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">ROCK, PAPER, LIZARD, SPOCK</string>
     <string name="btnplaylabel">Play </string>
+    <string name="btnRock">Rock</string>
+    <string name="btnPaper">Paper</string>
+    <string name="btnScissors">Scissors</string>
+    <string name="btnLizard">Lizard</string>
+    <string name="btnSpock">Spock</string>
+    <string name="btnQuit">Quit</string>
 </resources>

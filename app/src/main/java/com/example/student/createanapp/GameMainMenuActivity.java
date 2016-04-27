@@ -10,11 +10,10 @@ import android.content.DialogInterface;
 import android.view.View;
 import java.util.Random;
 
-
 public class GameMainMenuActivity extends AppCompatActivity {
 
-    Button btnRock, btnPaper, btnScissors, btnLizard, btnSpock, btnQuit;
-    TextView txtvwStatus;
+    private TextView txtvwStatus;
+    private static Button btnRock, btnPaper, btnScissors, btnLizard,btnSpock;
 
     //Creates the computer's Rock, Paper, Lizard, Spock
     Random playGame = new Random();
@@ -24,17 +23,14 @@ public class GameMainMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_main_menu);
-
-        btnSpock = (Button) findViewById(R.id.btnSpock);
+        txtvwStatus = (TextView) findViewById(R.id.txtvwStatus);
         btnLizard = (Button) findViewById(R.id.btnLizard);
+        btnSpock = (Button) findViewById(R.id.btnSpock);
         btnPaper = (Button) findViewById(R.id.btnPaper);
         btnRock = (Button) findViewById(R.id.btnRock);
         btnScissors = (Button) findViewById(R.id.btnScissors);
-        btnQuit = (Button) findViewById(R.id.btnQuit);
-        txtvwStatus = (TextView) findViewById(R.id.txtvwStatus);
 
     }
-
     //When Rock button is clicked, it will do one of the five things (a random play)
     public void playRock(View vw) {
         if (i == 0) {
@@ -115,20 +111,20 @@ public class GameMainMenuActivity extends AppCompatActivity {
         AlertDialog.Builder quittingGame = new AlertDialog.Builder(GameMainMenuActivity.this);
         quittingGame.setTitle("Quit Game?");
         quittingGame.setMessage("Are you sure you want to quit the game?");
-//If the player clicks yes, it will send it back to the main menu (intent)
+        //If the player clicks yes, it will send it back to the main menu (intent)
         quittingGame.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 Intent goBackToStart = new Intent(GameMainMenuActivity.this, MainMenuActivity.class);
                 startActivity(goBackToStart);
             }
         });
-//If the player clicks no, the pop-up dialog will disappear and the player cna continue playing
+        //If the player clicks no, the pop-up dialog will disappear and the player cna continue playing
         quittingGame.setNegativeButton("NO", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.cancel();
             }
         });
-//How the pop-up dialog be shown on the phone screen
+        //How the pop-up dialog be shown on the phone screen
         quittingGame.show();
 
     }
